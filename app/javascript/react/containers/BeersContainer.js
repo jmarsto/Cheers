@@ -13,14 +13,15 @@ class BeersContainer extends Component {
   componentDidMount() {
     fetch("/api/v1/beers")
     .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          let errorMessage = `${response.status} (${response.statusText})`,
-          error = new Error(errorMessage);
-      throw(error);
-        }
-      })
+      if (response.ok) {
+        return response;
+      }
+      else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error);
+      }
+    })
     .then((response) => response.json())
     .then((beers) => {
       this.setState({ beerList: beers })
