@@ -1,0 +1,6 @@
+<h2>Beers of Boston:</h2>
+  <% @beers.each do |beer| %>
+    <h4><%= beer.name %></h4>
+    <p>Style: <%= beer.style %></p>
+    <p>ABV: <%= beer.ABV %>%</p>
+  <%end%>
