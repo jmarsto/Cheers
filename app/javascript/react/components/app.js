@@ -1,7 +1,16 @@
 import React from 'react'
+import 'babel-polyfill';
+import Beers from './Beers';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-export const App = (props) => {
-  return (<h1>Make It So React</h1>)
+const App = (props) => {
+  return (
+    <Router history={browserHistory}>
+      <Route path='/beers' component={Beers}>
+
+      </Route>
+    </Router>
+  )
 }
 
 export default App
