@@ -6,7 +6,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 const App = (props) => {
   return (
     <Router history={browserHistory}>
-      <Route path='/beers' component={Beers}>
+      <Route path='/' component={Beers}>
 
       </Route>
     </Router>
