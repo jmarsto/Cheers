@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
-
+import ReviewContainer from './ReviewContainer'
 
 class BeersShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      beerData: {
+        beer: {
+          ABV: "",
+          name: "",
+          style: "",
+          id: ""
+
+        },
+        reviews: []
+      }
     }
   }
 
@@ -21,16 +31,17 @@ class BeersShowContainer extends Component {
       })
     .then((response) => response.json())
     .then((showData) => {
-      console.log(showData);
+      this.setState({ beerData: showData })
     })
   }
 
   render() {
-
     return(
       <div>
-        <h1>here is A beer</h1>
-
+        <h1>{this.state.beerData.beer.name}</h1>
+        <ReviewContainer
+          reviews = {this.state.beerData.reviews}
+          />
       </div>
     )
   }
