@@ -12,6 +12,6 @@ Rails.application.routes.draw do
     end
   end
 
-get '*path', to: 'homes#index'
+get '/beers', to: 'homes#index'
 
 end
