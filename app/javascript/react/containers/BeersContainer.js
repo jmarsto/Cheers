@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import BeerTile from '../components/BeerTile'
-
-
 class BeersContainer extends Component {
   constructor(props) {
     super(props);
@@ -9,14 +7,12 @@ class BeersContainer extends Component {
       beerList: []
     }
   }
-
   componentDidMount() {
     fetch("/api/v1/beers")
     .then(response => {
       if (response.ok) {
         return response;
-      }
-      else {
+      } else {
         let errorMessage = `${response.status} (${response.statusText})`,
         error = new Error(errorMessage);
         throw(error);
@@ -27,7 +23,6 @@ class BeersContainer extends Component {
       this.setState({ beerList: beers })
     })
   }
-
   render() {
     let beerTiles = this.state.beerList.map(beer => {
       return(
