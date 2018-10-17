@@ -4,8 +4,10 @@ import React from 'react';
 const ReviewTile = props => {
   return(
     <div>
-      <h1>Review here</h1>
-      <p>{props.body}</p>
+      <h4>Username: {props.username}</h4>
+      <p>Review: {props.body}</p>
+      <p>Rating: {props.rating}</p>
+      <p>{props.createdAt}</p>
     </div>
   )
 }

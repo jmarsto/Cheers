@@ -14,13 +14,17 @@ class ReviewContainer extends Component {
       return (
         <ReviewTile
           key = {review.id}
+          username = {review.username}
           body = {review.body}
+          rating = {review.rating}
+          createdAt = {review.created_at}
         />
       )
     })
 
     return(
       <div>
+        <h3>Reviews for {this.props.beer}</h3>
         {reviews}
       </div>
     )

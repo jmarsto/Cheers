@@ -19,8 +19,8 @@ class BeersContainer extends Component {
       }
     })
     .then((response) => response.json())
-    .then((beers) => {
-      this.setState({ beerList: beers })
+    .then((data) => {
+      this.setState({ beerList: data.beers })
     })
   }
   render() {

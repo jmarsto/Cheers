@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   end
 
 get '/beers', to: 'homes#index'
+get '/beers/:id', to: 'homes#index'
 
 end

@@ -6,13 +6,11 @@ class BeersShowContainer extends Component {
     super(props);
     this.state = {
       beerData: {
-        beer: {
-          ABV: "",
-          name: "",
-          style: "",
-          id: ""
-
-        },
+        ABV: "",
+        name: "",
+        style: "",
+        id: "",
+        description: "",
         reviews: []
       }
     }
@@ -30,16 +28,22 @@ class BeersShowContainer extends Component {
         }
       })
     .then((response) => response.json())
-    .then((showData) => {
-      this.setState({ beerData: showData })
+    .then((data) => {
+      this.setState({ beerData: data.beer })
     })
   }
 
   render() {
     return(
       <div>
-        <h1>{this.state.beerData.beer.name}</h1>
+        <h1>{this.state.beerData.name}</h1>
+        <div>
+          <p>{this.state.beerData.style}</p>
+          <p>ABV: {this.state.beerData.ABV}%</p>
+          <p>{this.state.beerData.description}</p>
+        </div>
         <ReviewContainer
+          beer = {this.state.beerData.name}
           reviews = {this.state.beerData.reviews}
           />
       </div>
