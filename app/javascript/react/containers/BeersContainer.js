@@ -38,7 +38,9 @@ class BeersContainer extends Component {
     return(
       <div>
         <h1>here are a bunch of beers</h1>
-        {beerTiles}
+        <div className="beerTiles">
+          {beerTiles}
+        </div>
       </div>
     )
   }
