@@ -11,4 +11,6 @@ class User < ApplicationRecord
   validates :encrypted_password, presence: true
   validates :age, presence: true, numericality: { greater_than_or_equal_to: 21 }
   validates_uniqueness_of :user_name
+
+  has_many :reviews
 end
