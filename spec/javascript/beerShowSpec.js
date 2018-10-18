@@ -4,10 +4,11 @@ import { shallow } from 'enzyme';
 import fetchMock from 'fetch-mock'
 
 describe('BeerShowContainer', () => {
+  let wrapper;
+  let beerData;
 
   beforeEach(() => {
-    let wrapper;
-    let beerData= {
+    beerData= {
       id: 1,
       name: "Budweiser",
       style: "American Lager",
@@ -33,29 +34,30 @@ describe('BeerShowContainer', () => {
 
   afterEach(fetchMock.restore)
 
+  describe('beer show page', () => {
+    it('should render the name of a specific beer on the page', () => {
+      setTimeout(() => {
+        expect(wrapper.find(BeerShowContainer.name).props()).toBePresent();
+      }, 0)
+    });
 
-  it('should render the name of a specific beer on the page', () => {
-    setTimeout(() => {
-      expect(wrapper.find(BeerShowContainer.name).props()).toBePresent();
-    }, 0)
-  });
+    it('should have a style on the show page', () => {
+      setTimeout(() => {
+        expect(wrapper.find(BeerShowContainer.style).props()).toBePresent();
+      }, 0)
+    });
 
-  it('should have a style on the show page', () => {
-    setTimeout(() => {
-      expect(wrapper.find(BeerShowContainer.style).props()).toBePresent();
-    }, 0)
-  });
+    it('should check if the h1 tag is rendered', () => {
+      setTimeout(() => {
+        expect(wrapper.find('h1')).toBePresent()
+      }, 0)
+    });
 
-  it('should check if the h1 tag is rendered', () => {
-    setTimeout(() => {
-      expect(wrapper.find('h1')).toBePresent()
-    }, 0)
-  });
-
-  it('renders a paragraph tag with the beer description', () => {
-    setTimeout(() => {
-      expect(wrapper.find('p').toBePresent(),
-      expect(wrapper.find)('p').text()).toEqual(beerData[0].description)
-    }, 0)
-  });
+    it('renders a paragraph tag with the beer description', () => {
+      setTimeout(() => {
+        expect(wrapper.find('p').toBePresent(),
+        expect(wrapper.find)('p').text()).toEqual(beerData[0].description)
+      }, 0)
+    });
+  })
 })
