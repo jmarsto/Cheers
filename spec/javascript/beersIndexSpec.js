@@ -5,14 +5,16 @@ describe('BeersContainer', () => {
   let data = [{
     id: 1,
     name: "life",
-    ABV: '10000'
+    ABV: '10000',
+    description: 'its the best'
   }]
   beforeEach(() => {
     wrapper = mount(
       <BeerTile
-      id = {data[0].id}
-      name = {data[0].name}
-      ABV = {data[0].ABV}
+        id = {data[0].id}
+        name = {data[0].name}
+        ABV = {data[0].ABV}
+        description = {data[0].description}
       />
     )
   })

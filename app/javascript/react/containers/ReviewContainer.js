@@ -4,9 +4,6 @@ import ReviewTile from '../components/ReviewTile'
 class ReviewContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      reviews: []
-    }
   }
 
   render() {
