@@ -45,6 +45,7 @@ class BeerShowContainer extends Component {
         <ReviewContainer
           beer = {this.state.beerData.name}
           reviews = {this.state.beerData.reviews}
+          beerId = {this.state.beerData.id}
           />
       </div>
     )
