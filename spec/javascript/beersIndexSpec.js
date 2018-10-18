@@ -19,12 +19,12 @@ describe('BeersContainer', () => {
     )
   })
   it('should have a list of beers on the index page', () => {
-  expect(wrapper.find(BeerTile)).toBePresent();
+    expect(wrapper.find(BeerTile)).toBePresent();
   });
   it('should check if the h3 tag is rendered', () => {
-  expect(wrapper.find('h3')).toBePresent()
+    expect(wrapper.find('h3')).toBePresent()
   });
   it('should have a list of beers on the index page', () => {
-  expect(wrapper.find('br')).toBePresent()
+    expect(wrapper.find('br')).toBePresent()
   });
 });
