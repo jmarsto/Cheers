@@ -21,14 +21,6 @@ class ReviewForm extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  formValid() {
-    if (this.state.body.trim() == "" || this.state.rating.trim() == "") {
-      return false;
-    } else {
-      return true;
-    }
-  }
-
   formPayload(){
     return {
       body: this.state.body,
@@ -36,6 +28,7 @@ class ReviewForm extends Component {
       beer_id: this.props.params.id
     };
   }
+  
   postNewReview(payload) {
     fetch(`/api/v1/beers/${this.props.params.id}/reviews.json`, {
       method: 'POST',
