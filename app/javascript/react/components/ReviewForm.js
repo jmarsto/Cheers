@@ -11,7 +11,6 @@ class ReviewForm extends Component {
     };
     this.handleFormChange = this.handleFormChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.formValid = this.formValid.bind(this);
     this.formPayload = this.formPayload.bind(this);
     this.postNewReview = this.postNewReview.bind(this)
     this.clearState = this.clearState.bind(this)
@@ -28,7 +27,7 @@ class ReviewForm extends Component {
       beer_id: this.props.params.id
     };
   }
-  
+
   postNewReview(payload) {
     fetch(`/api/v1/beers/${this.props.params.id}/reviews.json`, {
       method: 'POST',
