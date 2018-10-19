@@ -1,11 +1,12 @@
-import BeersContainer from '../../app/javascript/react/containers/BeersContainer'
-import BeerTile from '../../app/javascript/react/components/BeerTile'
+import BeersContainer from '../../../app/javascript/react/containers/BeersContainer'
+import BeerTile from '../../../app/javascript/react/components/BeerTile'
 describe('BeersContainer', () => {
   let wrapper;
   let data = [{
     id: 1,
     name: "life",
-    ABV: '10000'
+    ABV: '10000',
+    description: 'its the best'
   }]
   beforeEach(() => {
     wrapper = mount(
@@ -13,6 +14,7 @@ describe('BeersContainer', () => {
       id = {data[0].id}
       name = {data[0].name}
       ABV = {data[0].ABV}
+      description = {data[0].description}
       />
     )
   })
