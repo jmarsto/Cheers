@@ -7,14 +7,17 @@ class Api::V1::ReviewsController < ApplicationController
   end
 
   def create
-    formData = JSON.parse(request.body.read)
-
-    review = Review.new(body: formData["body"], rating: formData["rating"], beer_id: formData["beer_id"], user: current_user)
-
+    review = Review.new(review_params)
+    review.user = current_user
     if review.save
       render json: review
     else
       render json: { errors: review.errors.full_messages}, status: :unprocessable_entity
     end
   end
+
+  private
+    def review_params
+      params.require(:review).permit(:body, :rating, :beer_id, :user)
+    end
 end

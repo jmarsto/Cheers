@@ -12,7 +12,6 @@ const App = (props) => {
         <IndexRoute component={BeerShowContainer} />
         <Route path='reviews/new' component={ReviewForm}/>
       </Route>
-
     </Router>
   )
 }
