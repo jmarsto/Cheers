@@ -5,6 +5,9 @@ import { Link } from 'react-router'
 class ReviewContainer extends Component {
   constructor(props) {
     super(props);
+      beerData: {
+
+      }
   }
   render() {
     let reviews = this.props.reviews.map(review => {

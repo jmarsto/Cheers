@@ -27,4 +27,5 @@ describe('BeersContainer', () => {
   it('should have a list of beers on the index page', () => {
     expect(wrapper.find('br')).toBePresent()
   });
+
 });
