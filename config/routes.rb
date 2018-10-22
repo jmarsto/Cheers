@@ -7,12 +7,13 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :beers, only: [:index, :show] do
-        resources :reviews, only: [:index]
+        resources :reviews, only: [:index, :create]
       end
     end
   end
 
 get '/beers', to: 'homes#index'
 get '/beers/:id', to: 'homes#index'
+get '/beers/:id/reviews/new', to: 'homes#index'
 
 end
