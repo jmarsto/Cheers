@@ -14,7 +14,6 @@ const App = (props) => {
         <Route path='reviews/new' component={ReviewForm}/>
         <Route path='/beer/new' component={NewBeerForm}/>
       </Route>
-
     </Router>
   )
 }
