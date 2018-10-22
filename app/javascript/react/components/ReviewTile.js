@@ -2,10 +2,15 @@ import React from 'react';
 
 
 const ReviewTile = props => {
-  console.log(props)
+  let img;
+
+  if(props.profilePhoto.url) {
+    img = <img alt="Icon" src={props.profilePhoto.url} width="50" height="50"/>
+  }
+
   return(
     <div>
-      <img alt="Icon" src={props.profilePhoto.url} width="50" height="50"/>
+      {img}
       <h4>Username: {props.username}</h4>
       <p>Review: {props.body}</p>
       <p>Rating: {props.rating}</p>
