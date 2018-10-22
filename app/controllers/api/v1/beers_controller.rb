@@ -5,7 +5,7 @@ class Api::V1::BeersController < ApplicationController
   end
 
   def show
-    render json: Beer.find(params[:id]), serializer: BeerShowSerializer
+    render json: Beer.find(params[:id])
   end
 
 end
