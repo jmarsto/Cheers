@@ -8,7 +8,7 @@ class Api::V1::BeersController < ApplicationController
 
   def create
     newBeerData = JSON.parse(request.body.read)
-
+binding.pry
     newBeer = Beer.new(name: newBeerData["name"], style: newBeerData["style"], description: newBeerData["description"], ABV: newBeerData["ABV"])
 
     if newBeer.save

@@ -34,6 +34,7 @@ class BeerShowContainer extends Component {
   }
 
   render() {
+    console.log(this.state.beerData.reviews)
     return(
       <div>
         <h1>{this.state.beerData.name}</h1>
