@@ -18,9 +18,9 @@
 
  body {
    background-image: url('https://torange.biz/photofx/157/8/mirror-blur-frame-beer-157713.jpg');
-   background-repeat: no-repeat;
+   background-repeat: repeat;
    background-size: cover;
- }
+}
 #actions {
    color: black;
  }
@@ -30,16 +30,26 @@
   font-size: 1rem;
 }
 .log_in {
-  margin-top: 14rem;
+  margin-top: 10rem;
   color: #ffffff;
   display: grid;
+}
+a:link{
+  color: white;
+  font-weight: 600;
+  text-shadow: 2px 2px #000000
+}
+a:visited{
+  color: white;
+  font-weight: 600;
+  text-shadow: 2px 2px #000000
 }
 .field_div {
   margin-top: 14rem;
   color: #ffffff;
 }
 .field {
-  color: black;
+  color: white;
   font-weight: 800;
 }
 .sign_up {
@@ -52,13 +62,40 @@
 .top-bar {
   background-image: url('');
 }
+.Cheers{
+  font-size: 8rem;
+  font-family: 'Fascinate Inline', cursive;
+  color: #A85826;
+  margin-left: 50rem;
+}
+.classy{
+  font-size: 3rem;
+  font-family: 'Fascinate Inline', cursive;
+  color: #A85826;
+  margin-left: 40rem;
+  text-shadow: 2px 2px #000000;
+}
+.reviewTitle{
+  font-size: 4rem;
+  font-family: 'Fascinate Inline', cursive;
+  color: #000000;
+  margin-left: 33rem;
+  margin-top: 25rem;
+  text-shadow: 2px 2px #000000;
+}
 .beerTile {
-  border: 1px solid black;
+  border: 1px solid white;
+  color: white;
+  border-radius: 2rem;
   margin: 1rem;
-  text-align: center;
+  padding-left: 2rem;
+  text-shadow: 2px 2px #000000
+
 }
 .beerTiles {
-  margin-top: 18rem;
+  -webkit-column-rule-width: 2px;
+  margin-top: 1rem;
+  color: white
 }
 
 p {
@@ -67,4 +104,20 @@ p {
 
 h1 {
   color: white
+}
+.reviewForm{
+  margin-top: 20rem;
+  font-style: italic;
+  color: red;
+  font-size: 1rem;
+}
+.submitButton{
+  color: black;
+}
+.forgotPassForm{
+  margin-top: 3rem;
+  margin-left: 2rem;
+  font-style: italic;
+  color: #ffffff;
+  font-size: 4rem;
 }

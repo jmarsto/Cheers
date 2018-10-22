@@ -37,7 +37,9 @@ class BeersContainer extends Component {
     })
     return(
       <div>
-        <h1>here are a bunch of beers</h1>
+        <h1 className="Cheers">CHEERS</h1>
+        <h2 className="classy">A classy beer review Website</h2>
+        <h3 className="reviewTitle">Click a Beer</h3>
         <div className="beerTiles">
           {beerTiles}
         </div>
