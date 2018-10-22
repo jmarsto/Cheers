@@ -1,5 +1,6 @@
 import BeerShowContainer from '../../../app/javascript/react/containers/BeerShowContainer'
 import BeerTile from '../../../app/javascript/react/components/BeerTile'
+import ReviewContainer from '../../../app/javascript/react/containers/ReviewContainer'
 import fetchMock from 'fetch-mock'
 
 describe('BeerShowContainer', () => {
@@ -60,6 +61,24 @@ describe('BeerShowContainer', () => {
         expect(wrapper.text()).toMatch(beerData.beer.reviews[0].body)
         expect(wrapper.text()).toMatch(beerData.beer.reviews[0].rating)
         expect(wrapper.text()).toMatch(beerData.beer.reviews[0].username)
+        done()
+      }, 0)
+    })
+
+    it('should render the review container component', (done) => {
+      setTimeout(() => {
+        expect(wrapper.find(ReviewContainer)).toBePresent()
+        done()
+      }, 0)
+    })
+
+    it('should render the review container component with correct props', (done) => {
+      setTimeout(() => {
+        expect(wrapper.find(ReviewContainer).props()).toEqual({
+          beer: beerData.beer.name,
+          reviews: beerData.beer.reviews,
+          beerId: beerData.beer.id
+        })
         done()
       }, 0)
     })
