@@ -11,20 +11,11 @@ class NewBeerForm extends Component {
         ABV: "",
         errors: []
     };
-    this.formPayload = this.formPayload.bind(this)
     this.postNewBeer = this.postNewBeer.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleFormChange = this.handleFormChange.bind(this)
   }
 
-  formPayload(){
-    return {
-      name: this.state.name,
-      style: this.state.style,
-      description: this.state.description,
-      ABV: this.state.ABV,
-    };
-  }
 
   handleFormChange(event) {
     this.setState({ [event.target.name]: event.target.value });
@@ -44,39 +35,28 @@ class NewBeerForm extends Component {
         browserHistory.push(`/`)
       } else {
         return response.json()
+        .then(response => {
+          return response.errors
+        })
+        .then(errors => {
+          this.setState({ errors: errors })
+          console.log(this.state.errors);
+        })
+        .catch(console.log("ERROR in FETCH"));
       }
     })
-    .then(response => {
-      return response.errors
-    })
-    .then(errors => {
-      this.setState({ errors: errors })
-      console.log(this.state.errors);
-    })
-    .catch(console.log("ERRORSZ"));
   }
 
   handleSubmit(event) {
     event.preventDefault();
-      let payload = this.formPayload();
+      let payload = {
+        name: this.state.name,
+        style: this.state.style,
+        description: this.state.description,
+        ABV: this.state.ABV,
+      };
       this.postNewBeer(payload);
   }
-
-
-  // validateInput(input) {
-  //   if (input === '') {
-  //     let new Error = { articleTitle: 'You must enter both Name and Style.'}
-  //     this.setState({ errors: Object.assign( this.state.errors, newError) })
-  //     return false
-  //   } else {
-  //     errorState = this.state.errors
-  //     delete errorState.beerTitle
-  //     this.setState({ errors: errorState })
-  //     return true
-  //   }
-  // }
-
-
 
   render() {
 

@@ -7,7 +7,6 @@ const BeerTile = props => {
       <h3><Link to={`/beers/${props.id}`}>{props.name}</Link></h3>
       {props.style}<br/>
       {props.abv}<br/>
-
     </div>
   )
 }

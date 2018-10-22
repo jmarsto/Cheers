@@ -1,15 +1,12 @@
 class Api::V1::BeersController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
-
   def index
     render json: Beer.all
   end
 
   def create
-    newBeerData = JSON.parse(request.body.read)
-binding.pry
-    newBeer = Beer.new(name: newBeerData["name"], style: newBeerData["style"], description: newBeerData["description"], ABV: newBeerData["ABV"])
+    newBeer = Beer.new(beer_params)
 
     if newBeer.save
       render json: newBeer
@@ -22,4 +19,8 @@ binding.pry
     render json: Beer.find(params[:id]), serializer: BeerShowSerializer
   end
 
+  private
+    def beer_params
+      params.require(:beer).permit(:name, :style, :description, :ABV)
+    end
 end

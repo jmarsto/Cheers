@@ -11,21 +11,12 @@ class ReviewForm extends Component {
     };
     this.handleFormChange = this.handleFormChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.formPayload = this.formPayload.bind(this);
     this.postNewReview = this.postNewReview.bind(this)
     this.clearState = this.clearState.bind(this)
   }
 
   handleFormChange(event) {
     this.setState({ [event.target.name]: event.target.value });
-  }
-
-  formPayload(){
-    return {
-      body: this.state.body,
-      rating: this.state.rating,
-      beer_id: this.props.params.id
-    };
   }
 
   postNewReview(payload) {
@@ -42,16 +33,15 @@ class ReviewForm extends Component {
         browserHistory.push(`/beers/${payload.beer_id}`)
       } else {
         return response.json()
+        .then(response => {
+            return response.errors
+        })
+        .then(errors => {
+          this.setState({ errors: errors })
+        })
+        .catch(console.log("ERROR in FETCH"));
       }
     })
-    .then(response => {
-      return response.errors
-    })
-    .then(errors => {
-      this.setState({ errors: errors })
-      console.log(this.state.errors);
-    })
-    .catch(console.log("ERRORSZ"));
   }
 
   clearState() {
@@ -63,19 +53,22 @@ class ReviewForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-      let payload = this.formPayload();
+      let payload = {
+        body: this.state.body,
+        rating: this.state.rating,
+        beer_id: this.props.params.id
+      };
       this.postNewReview(payload);
-      // set errors
-      // render errors
-      // rerender component or something
   }
 
   render() {
     let errors
-    if (!!this.state.errors.length) {
+    if (this.state.errors.length) {
       errors = this.state.errors.map(error => {
         return (
-          <div>{error}</div>
+          <div>
+            {error}
+          </div>
         )
       })
     }

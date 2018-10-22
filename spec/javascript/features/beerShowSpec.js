@@ -1,5 +1,6 @@
 import BeerShowContainer from '../../../app/javascript/react/containers/BeerShowContainer'
 import BeerTile from '../../../app/javascript/react/components/BeerTile'
+import ReviewContainer from '../../../app/javascript/react/containers/ReviewContainer'
 import fetchMock from 'fetch-mock'
 
 describe('BeerShowContainer', () => {
@@ -9,12 +10,18 @@ describe('BeerShowContainer', () => {
   beforeEach(() => {
     beerData= {
       beer: {
-        id:1,
-        name:"King Julius",
-        style:"New England IPA",
-        ABV:"8.3",
-        description: "This is the best beer ever",
-        reviews:[]
+        id: 2,
+        name: "Very Hazy",
+        style: "New England IPA",
+        ABV: "8.6",
+        description: "mmmmm.. this is a good beer",
+        reviews: [{
+          id: 2,
+          username: "jack",
+          body: "asdfsadf",
+          rating: "12344",
+          created_at: "2018-10-18T14:57:36.088Z"
+        }]
       }
     }
 
@@ -48,5 +55,32 @@ describe('BeerShowContainer', () => {
         done()
       }, 0)
     });
+
+    it('should render the reviews of a specific beer on the page', (done) => {
+      setTimeout(() => {
+        expect(wrapper.text()).toMatch(beerData.beer.reviews[0].body)
+        expect(wrapper.text()).toMatch(beerData.beer.reviews[0].rating)
+        expect(wrapper.text()).toMatch(beerData.beer.reviews[0].username)
+        done()
+      }, 0)
+    })
+
+    it('should render the review container component', (done) => {
+      setTimeout(() => {
+        expect(wrapper.find(ReviewContainer)).toBePresent()
+        done()
+      }, 0)
+    })
+
+    it('should render the review container component with correct props', (done) => {
+      setTimeout(() => {
+        expect(wrapper.find(ReviewContainer).props()).toEqual({
+          beer: beerData.beer.name,
+          reviews: beerData.beer.reviews,
+          beerId: beerData.beer.id
+        })
+        done()
+      }, 0)
+    })
   })
 })
