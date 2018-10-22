@@ -1,7 +1,6 @@
 class Api::V1::BeersController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
-
   def index
     render json: Beer.all
   end
@@ -20,9 +19,7 @@ class Api::V1::BeersController < ApplicationController
     render json: Beer.find(params[:id]), serializer: BeerShowSerializer
   end
 
-
   private
-
     def beer_params
       params.require(:beer).permit(:name, :style, :description, :ABV)
     end

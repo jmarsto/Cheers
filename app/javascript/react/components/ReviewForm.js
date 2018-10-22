@@ -51,7 +51,7 @@ class ReviewForm extends Component {
       this.setState({ errors: errors })
       console.log(this.state.errors);
     })
-    .catch(console.log("ERRORSZ"));
+    .catch(console.log("ERROR in the fetch"));
   }
 
   clearState() {
@@ -65,9 +65,6 @@ class ReviewForm extends Component {
     event.preventDefault();
       let payload = this.formPayload();
       this.postNewReview(payload);
-      // set errors
-      // render errors
-      // rerender component or something
   }
 
   render() {

@@ -1,4 +1,3 @@
-
 require 'rails_helper'
 
 RSpec.describe Api::V1::BeersController, type: :controller do
@@ -16,6 +15,15 @@ RSpec.describe Api::V1::BeersController, type: :controller do
 
       expect(returned_json["beers"][0]["name"]).to eq "life"
       expect(returned_json["beers"][1]["name"]).to eq "beername"
+    end
+  end
+
+  describe "POST#create" do
+    it "creates a new Beer" do
+      beer_params = { name: "life", style: "light", description: "yeah!", ABV: "6.7"}
+      prev_count = Beer.count
+      post(:create, params: {beer: beer_params})
+      expect(Beer.count).to eq(prev_count + 1)
     end
   end
 end
