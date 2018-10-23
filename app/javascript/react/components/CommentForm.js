@@ -18,7 +18,7 @@ class CommentForm extends Component {
   }
 
   postComment(payload) {
-    fetch(`/api/v1/beers/${this.props.beerId}/reviews/${this.props.reviewId}/comments`, {
+    fetch(`/api/v1/reviews/${this.props.reviewId}/comments`, {
       method: 'POST',
       body: JSON.stringify(payload),
       headers: {
@@ -52,7 +52,6 @@ class CommentForm extends Component {
   }
 
   handleSubmit(event) {
-
     event.preventDefault();
       let payload = {
         body: this.state.body
