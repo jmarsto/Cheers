@@ -16,7 +16,6 @@ class NewBeerForm extends Component {
     this.handleFormChange = this.handleFormChange.bind(this)
   }
 
-
   handleFormChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
