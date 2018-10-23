@@ -6,31 +6,7 @@ class ReviewContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: [{
-        key: null,
-        id: 1,
-        username: "",
-        body: "",
-        rating: null,
-        created_at: null,
-        profile_photo: {
-          url: null
-        },
-        user: {
-          id: null,
-          email: "",
-          first_name: "",
-          last_name: "",
-          user_name: "",
-          created_at: "",
-          updated_at: "",
-          age: null,
-          profile_photo: {
-            url: null
-          }
-        },
-        comments: []
-      }]
+      reviews: []
     }
   }
 
