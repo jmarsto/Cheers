@@ -27,6 +27,7 @@ class BeersContainer extends Component {
       this.setState({ beerList: data.beers })
     })
   }
+  
   render() {
     let beerTiles = this.state.beerList.map(beer => {
       return(

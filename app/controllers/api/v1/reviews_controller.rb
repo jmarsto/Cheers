@@ -2,7 +2,8 @@ class Api::V1::ReviewsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    reviews = Review.all
+    beer = Beer.find(params[:beer_id])
+    reviews = beer.reviews
     render json: reviews
   end
 

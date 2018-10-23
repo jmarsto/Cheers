@@ -1,10 +1,23 @@
 import React from 'react';
-
+import CommentTile from './CommentTile'
 
 const ReviewTile = props => {
+  let comments = props.comments.map(comment => {
+    return(
+      <CommentTile
+        key = {comment.id}
+        id = {comment.id}
+        body = {comment.body}
+        userName = {comment.username}
+        createdAt = {comment.created_at}
+        updatedAt = {comment.updated_at}
+        />
+    )
+  })
+
   let img;
 
-  if(props.profilePhoto.url) {
+  if(props.profilePhoto) {
     img = <img alt="Icon" src={props.profilePhoto.url} width="50" height="50"/>
   }
 
@@ -15,6 +28,7 @@ const ReviewTile = props => {
       <p>Review: {props.body}</p>
       <p>Rating: {props.rating}</p>
       <p>{props.createdAt}</p>
+      {comments}
     </div>
   )
 }
