@@ -3,13 +3,12 @@ import ReviewContainer from '../../../app/javascript/react/containers/ReviewCont
 import BeerTile from '../../../app/javascript/react/components/BeerTile'
 import ReviewTile from '../../../app/javascript/react/components/ReviewTile'
 import CommentTile from '../../../app/javascript/react/components/CommentTile'
-import ReviewContainer from '../../../app/javascript/react/containers/ReviewContainer'
 import fetchMock from 'fetch-mock'
 
 describe('BeerShowContainer', () => {
   let wrapper;
   let beerData;
-  let reviewsData
+  let reviewsData;
 
   beforeEach(() => {
     beerData= {
@@ -39,6 +38,9 @@ describe('BeerShowContainer', () => {
         body: "asdfsadf",
         rating: 12344,
         created_at: "2018-10-18T14:57:36.088Z",
+        profile_photo: {
+          url: null
+        },
         user: {
           id: 1,
           email: "jack@gmail.com",
@@ -47,7 +49,10 @@ describe('BeerShowContainer', () => {
           user_name: "jack",
           created_at: "2018-10-17T20:08:22.373Z",
           updated_at: "2018-10-17T20:08:22.373Z",
-          age: 23
+          age: 23,
+          profile_photo: {
+            url: null
+          }
         },
         comments: [{
           username: "jack",
@@ -59,19 +64,19 @@ describe('BeerShowContainer', () => {
       }]
     }
 
-    fetchMock.get(`/api/v1/beers/${beerData.id}`, {
+    fetchMock.get(`/api/v1/beers/${beerData.beer.id}`, {
       status: 200,
       body: beerData
     });
 
-    fetchMock.get(`/api/v1/beers/${beerData.id}/reviews`, {
+    fetchMock.get(`/api/v1/beers/${beerData.beer.id}/reviews`, {
       status: 200,
       body: reviewsData
     })
 
     wrapper = mount(
       <BeerShowContainer
-        params={ { id: beerData.id } }
+        params={ { id: beerData.beer.id } }
         />
     );
   })
@@ -97,7 +102,6 @@ describe('BeerShowContainer', () => {
 
     it('should render the reviews of a specific beer on the page', (done) => {
       setTimeout(() => {
-        debugger
         expect(wrapper.text()).toMatch(beerData.beer.reviews[0].body)
         expect(wrapper.text()).toMatch(beerData.beer.reviews[0].rating)
         expect(wrapper.text()).toMatch(beerData.beer.reviews[0].username)
@@ -132,6 +136,8 @@ describe('BeerShowContainer', () => {
        done()
      }, 0)
    })
+
+   it('should have a Review Container', (done) => {
       setTimeout(() => {
         expect(wrapper.find(ReviewContainer)).toBePresent()
         done()
@@ -141,8 +147,6 @@ describe('BeerShowContainer', () => {
     it('should render the review container component with correct props', (done) => {
       setTimeout(() => {
         expect(wrapper.find(ReviewContainer).props()).toEqual({
-          beer: beerData.beer.name,
-          reviews: beerData.beer.reviews,
           beerId: beerData.beer.id
         })
         done()

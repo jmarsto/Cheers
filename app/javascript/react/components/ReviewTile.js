@@ -14,10 +14,10 @@ const ReviewTile = props => {
         />
     )
   })
-  
+
   let img;
 
-  if(props.profilePhoto.url) {
+  if(props.profilePhoto) {
     img = <img alt="Icon" src={props.profilePhoto.url} width="50" height="50"/>
   }
 

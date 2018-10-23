@@ -12,8 +12,23 @@ class ReviewContainer extends Component {
         username: "",
         body: "",
         rating: null,
-        createdAt: null,
-        user: {},
+        created_at: null,
+        profile_photo: {
+          url: null
+        },
+        user: {
+          id: null,
+          email: "",
+          first_name: "",
+          last_name: "",
+          user_name: "",
+          created_at: "",
+          updated_at: "",
+          age: null,
+          profile_photo: {
+            url: null
+          }
+        },
         comments: []
       }]
     }
