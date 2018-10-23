@@ -9,8 +9,7 @@ class BeerShowContainer extends Component {
         name: "",
         style: "",
         id: "",
-        description: "",
-        reviews: []
+        description: ""
     }
   }
 
