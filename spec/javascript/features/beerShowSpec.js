@@ -20,7 +20,10 @@ describe('BeerShowContainer', () => {
           username: "jack",
           body: "asdfsadf",
           rating: "12344",
-          created_at: "2018-10-18T14:57:36.088Z"
+          created_at: "2018-10-18T14:57:36.088Z",
+          profile_photo: {
+            url: null
+          }
         }]
       }
     }
@@ -58,6 +61,7 @@ describe('BeerShowContainer', () => {
 
     it('should render the reviews of a specific beer on the page', (done) => {
       setTimeout(() => {
+        debugger
         expect(wrapper.text()).toMatch(beerData.beer.reviews[0].body)
         expect(wrapper.text()).toMatch(beerData.beer.reviews[0].rating)
         expect(wrapper.text()).toMatch(beerData.beer.reviews[0].username)

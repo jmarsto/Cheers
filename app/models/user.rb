@@ -13,4 +13,6 @@ class User < ApplicationRecord
   validates_uniqueness_of :user_name
 
   has_many :reviews
+  
+  mount_uploader :profile_photo, ProfilePhotoUploader
 end
