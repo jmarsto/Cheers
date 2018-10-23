@@ -1,36 +1,57 @@
-import React from 'react';
+import React, { Component } from 'react';
 import CommentTile from './CommentTile'
+import CommentForm from './CommentForm'
 
-const ReviewTile = props => {
-  let comments = props.comments.map(comment => {
-    return(
-      <CommentTile
-        key = {comment.id}
-        id = {comment.id}
-        body = {comment.body}
-        userName = {comment.username}
-        createdAt = {comment.created_at}
-        updatedAt = {comment.updated_at}
-        />
-    )
-  })
-
-  let img;
-
-  if(props.profilePhoto) {
-    img = <img alt="Icon" src={props.profilePhoto.url} width="50" height="50"/>
+class ReviewTile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      comments: this.props.comments
+    }
+    this.addComment = this.addComment.bind(this)
   }
 
-  return(
-    <div>
-      {img}
-      <h4>Username: {props.username}</h4>
-      <p>Review: {props.body}</p>
-      <p>Rating: {props.rating}</p>
-      <p>{props.createdAt}</p>
-      {comments}
-    </div>
-  )
+  addComment(comment) {
+    let newCommentsArray = this.state.comments.concat(comment)
+    this.setState({ comments: newCommentsArray })
+  }
+
+  render() {
+    let comments = this.state.comments.map(comment => {
+      return(
+        <CommentTile
+          key = {comment.id}
+          id = {comment.id}
+          body = {comment.body}
+          userName = {comment.username}
+          createdAt = {comment.created_at}
+          updatedAt = {comment.updated_at}
+          />
+      )
+    })
+
+    let img;
+
+    if(this.props.profilePhoto) {
+      img = <img alt="Icon" src={this.props.profilePhoto.url} width="50" height="50"/>
+    }
+
+    return(
+      <div>
+        {img}
+        <h4>Username: {this.props.username}</h4>
+        <p>Review: {this.props.body}</p>
+        <p>Rating: {this.props.rating}</p>
+        <p>{this.props.createdAt}</p>
+        {comments}
+        <CommentForm
+          addComment = {this.addComment}
+          beerId = {this.props.beerId}
+          reviewId = {this.props.id}
+        />
+      </div>
+    )
+  }
 }
 
 export default ReviewTile;

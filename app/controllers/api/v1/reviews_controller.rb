@@ -16,7 +16,7 @@ class Api::V1::ReviewsController < ApplicationController
       render json: { errors: review.errors.full_messages}, status: :unprocessable_entity
     end
   end
-
+  
   private
     def review_params
       params.require(:review).permit(:body, :rating, :beer_id, :user)

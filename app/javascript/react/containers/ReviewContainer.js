@@ -40,12 +40,13 @@ class ReviewContainer extends Component {
           createdAt = {review.created_at}
           user = {review.user}
           comments = {review.comments}
+          beerId = {this.props.beerId}
         />
       )
     })
     return(
       <div>
-        <h3>Reviews for {this.props.beer}</h3>
+        <h3>Reviews:</h3>
         {reviews}
         <Link to={`/beers/${this.props.beerId}/reviews/new`}>New Review</Link>
       </div>
