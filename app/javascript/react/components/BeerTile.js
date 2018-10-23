@@ -6,7 +6,7 @@ const BeerTile = props => {
     <div className="large-2 medium-2 small-2 column beerTile">
       <h3><Link to={`/beers/${props.id}`}>{props.name}</Link></h3>
       {props.style}<br/>
-      {props.abv}
+      {props.abv}<br/>
     </div>
   )
 }

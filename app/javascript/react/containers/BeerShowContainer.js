@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReviewContainer from './ReviewContainer'
 
-class BeersShowContainer extends Component {
+class BeerShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,7 +37,6 @@ class BeersShowContainer extends Component {
   }
 
   render() {
-    debugger
     return(
       <div>
         <h1>{this.state.name}</h1>
@@ -54,4 +53,4 @@ class BeersShowContainer extends Component {
   }
 }
 
-export default BeersShowContainer;
+export default BeerShowContainer;

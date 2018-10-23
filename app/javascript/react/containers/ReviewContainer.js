@@ -42,6 +42,7 @@ class ReviewContainer extends Component {
         <ReviewTile
           key = {review.id}
           id = {review.id}
+          profilePhoto = {review.profile_photo}
           username = {review.username}
           body = {review.body}
           rating = {review.rating}

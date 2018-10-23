@@ -3,6 +3,7 @@ import ReviewContainer from '../../../app/javascript/react/containers/ReviewCont
 import BeerTile from '../../../app/javascript/react/components/BeerTile'
 import ReviewTile from '../../../app/javascript/react/components/ReviewTile'
 import CommentTile from '../../../app/javascript/react/components/CommentTile'
+import ReviewContainer from '../../../app/javascript/react/containers/ReviewContainer'
 import fetchMock from 'fetch-mock'
 
 describe('BeerShowContainer', () => {
@@ -23,7 +24,10 @@ describe('BeerShowContainer', () => {
           username: "jack",
           body: "asdfsadf",
           rating: "12344",
-          created_at: "2018-10-18T14:57:36.088Z"
+          created_at: "2018-10-18T14:57:36.088Z",
+          profile_photo: {
+            url: null
+          }
         }]
       }
     }
@@ -93,6 +97,7 @@ describe('BeerShowContainer', () => {
 
     it('should render the reviews of a specific beer on the page', (done) => {
       setTimeout(() => {
+        debugger
         expect(wrapper.text()).toMatch(beerData.beer.reviews[0].body)
         expect(wrapper.text()).toMatch(beerData.beer.reviews[0].rating)
         expect(wrapper.text()).toMatch(beerData.beer.reviews[0].username)
@@ -103,15 +108,6 @@ describe('BeerShowContainer', () => {
     it('should render the review container component', (done) => {
      setTimeout(() => {
        expect(wrapper.find(ReviewContainer)).toBePresent()
-       done()
-     }, 0)
-   })
-
-   it('should render the review container component with correct props', (done) => {
-     setTimeout(() => {
-       expect(wrapper.find(ReviewContainer).props()).toEqual({
-         beerId: beerData.id
-         })
        done()
      }, 0)
    })
@@ -136,5 +132,21 @@ describe('BeerShowContainer', () => {
        done()
      }, 0)
    })
+      setTimeout(() => {
+        expect(wrapper.find(ReviewContainer)).toBePresent()
+        done()
+      }, 0)
+    })
+
+    it('should render the review container component with correct props', (done) => {
+      setTimeout(() => {
+        expect(wrapper.find(ReviewContainer).props()).toEqual({
+          beer: beerData.beer.name,
+          reviews: beerData.beer.reviews,
+          beerId: beerData.beer.id
+        })
+        done()
+      }, 0)
+    })
   })
 })

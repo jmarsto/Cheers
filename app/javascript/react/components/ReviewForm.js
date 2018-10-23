@@ -42,7 +42,6 @@ class ReviewForm extends Component {
         .catch(console.log("ERROR in FETCH"));
       }
     })
-
   }
 
   clearState() {
