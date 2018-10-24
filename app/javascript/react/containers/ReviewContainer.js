@@ -5,15 +5,16 @@ import { Link } from 'react-router'
 class ReviewContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      reviews: []
-    }
+      beerData: {
+
+      }
   }
   render() {
     let reviews = this.props.reviews.map(review => {
       return (
         <ReviewTile
           key = {review.id}
+          profilePhoto = {review.profile_photo}
           username = {review.username}
           body = {review.body}
           rating = {review.rating}
