@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import BeerTile from '../components/BeerTile'
+<<<<<<< HEAD
 import NewBeerForm from '../components/NewBeerForm'
 import { Link } from 'react-router'
 
+=======
+>>>>>>> master
 class BeersContainer extends Component {
   constructor(props) {
     super(props);
@@ -78,11 +81,17 @@ class BeersContainer extends Component {
     })
     return(
       <div>
+<<<<<<< HEAD
         <h1>here are a bunch of beers</h1>
         {this.state.error}
         <div className="beerTiles">
+=======
+        <h1 className="cheers">CHEERS</h1>
+        <h2 className="classy">A classy beer review Website</h2>
+        <h3 className="review-title">Click a Beer</h3>
+        <div className="beer-tiles">
+>>>>>>> master
           {beerTiles}
-          <Link to={`/beer/new`}>New Beer</Link>
         </div>
       </div>
     )
