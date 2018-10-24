@@ -9,9 +9,8 @@ class BeerShowContainer extends Component {
         name: "",
         style: "",
         id: "",
-        description: "",
-        reviews: []
-    }
+        description: ""
+      }
   }
 
   componentDidMount() {
@@ -32,8 +31,7 @@ class BeerShowContainer extends Component {
         id: data.beer.id,
         description: data.beer.description,
         ABV: data.beer.ABV,
-        style: data.beer.style,
-        reviews: data.beer.reviews
+        style: data.beer.style
       })
     })
   }
@@ -49,7 +47,7 @@ class BeerShowContainer extends Component {
         </div>
         <ReviewContainer
           beerId = {this.props.params.id}
-           />
+         />
       </div>
     )
   }

@@ -1,8 +1,6 @@
 import React from 'react';
 
-
 const CommentTile = props => {
-
   return(
     <div>
       <div className="comment">
