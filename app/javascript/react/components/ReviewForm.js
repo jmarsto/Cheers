@@ -20,7 +20,7 @@ class ReviewForm extends Component {
   }
 
   postNewReview(payload) {
-    fetch(`/api/v1/beers/${this.props.params.id}/reviews.json`, {
+    fetch(`/api/v1/beers/${this.props.params.id}/reviews`, {
       method: 'POST',
       body: JSON.stringify(payload),
       headers: {

@@ -2,7 +2,8 @@ class Api::V1::ReviewsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    reviews = Review.all
+    beer = Beer.find(params[:beer_id])
+    reviews = beer.reviews
     render json: reviews
   end
 
@@ -15,7 +16,7 @@ class Api::V1::ReviewsController < ApplicationController
       render json: { errors: review.errors.full_messages}, status: :unprocessable_entity
     end
   end
-
+  
   private
     def review_params
       params.require(:review).permit(:body, :rating, :beer_id, :user)
