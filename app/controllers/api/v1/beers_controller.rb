@@ -1,6 +1,5 @@
 class Api::V1::BeersController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
-  before_action :authorize_user, except: [:index, :create, :show]
 
   def index
     render json: Beer.all
@@ -31,13 +30,8 @@ class Api::V1::BeersController < ApplicationController
   end
 
   private
-    def beer_params
-      params.require(:beer).permit(:name, :style, :description, :ABV)
-    end
 
-    def authorize_user
-    if !user_signed_in? && current_user.admin?
-    end
+  def beer_params
+    params.require(:beer).permit(:name, :style, :description, :ABV)
   end
-
 end
