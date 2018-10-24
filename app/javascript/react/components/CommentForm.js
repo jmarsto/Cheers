@@ -63,11 +63,13 @@ class CommentForm extends Component {
   render(){
     return(
       <div>
-        <form className="form" onChange={this.handleFormChange} onSubmit={this.handleSubmit}>
-          <label htmlFor="body">Comment:</label>
-          <input type="text" name="body" value={this.state.body}></input>
-          <input className="submitButton" type="submit" value="Submit" />
-        </form>
+        <div className="comment-form">
+          <form className="form" onChange={this.handleFormChange} onSubmit={this.handleSubmit}>
+            <label htmlFor="body">Comment:</label>
+            <input className="comment-input" type="text" name="body" value={this.state.body}></input>
+            <input className="submit-button" type="submit" value="Comment" />
+          </form>
+        </div>
       </div>
     )
   }

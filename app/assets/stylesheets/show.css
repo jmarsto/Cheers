@@ -1,8 +1,74 @@
-.review-title{
+.beer-specifics {
+  background-color: #70522e;
+  height: 200vh;
+  opacity: 0.7;
+}
+
+.beer-specifics h1 {
+  font-size: 6rem;
+  padding-bottom: 5rem;
+  font-weight: 700;
+  text-shadow: 4px 4px black;
+}
+
+.beer-specifics p {
+  font-size: 1.6rem;
+}
+
+.review-container {
+  background-color: #70522e;
+  height: 200vh;
+  opacity: 0.7;
+  color: white;
+}
+
+.review-tile {
+}
+
+.review-main-title{
+  color: white;
   font-size: 4rem;
-  font-family: 'Fascinate Inline', cursive;
-  color: #000000;
-  margin-left: 33rem;
-  margin-top: 25rem;
-  text-shadow: 2px 2px #000000;
+}
+
+.entire-review{
+  background-color: #352B1D;
+  opacity: 0.9;
+  padding: 1rem;
+  border-radius: 2rem;
+
+}
+
+.comments-container p {
+  margin: 0px;
+}
+
+.comment-form {
+
+}
+
+.submit-button {
+
+}
+
+.review-rating {
+  font-size: 1rem;
+  font-weight: 800;
+}
+.comment-input {
+  margin-right: 4px;
+  margin-left: 4rem;
+  width: 70%
+}
+
+.comment-tile {
+  background-color: #352B1D;
+  width: 90%;
+  margin: auto;
+  margin-top: 4px;
+  padding-left: 1rem;
+  border-radius: 2rem;
+}
+
+.reviewer-name {
+  color: white
 }

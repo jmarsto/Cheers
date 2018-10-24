@@ -38,17 +38,23 @@ class ReviewTile extends Component {
 
     return(
       <div>
-        {img}
-        <h4>Username: {this.props.username}</h4>
-        <p>Review: {this.props.body}</p>
-        <p>Rating: {this.props.rating}</p>
-        <p>{this.props.createdAt}</p>
-        {comments}
-        <CommentForm
-          addComment = {this.addComment}
-          beerId = {this.props.beerId}
-          reviewId = {this.props.id}
-        />
+        <div className="review-tile">
+          <div className="entire-review">
+            {img}
+            <h4 className="reviewer-name">{this.props.username}</h4>
+            <p className="review-rating">Review: {this.props.body}</p>
+            <p className="review-rating">Rating: {this.props.rating}</p>
+            <p>{this.props.createdAt}</p>
+          </div>
+          <div className="comments-container">
+            {comments}
+            <CommentForm
+              addComment = {this.addComment}
+              beerId = {this.props.beerId}
+              reviewId = {this.props.id}
+            />
+          </div>
+        </div>
       </div>
     )
   }

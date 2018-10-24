@@ -46,9 +46,9 @@ class ReviewContainer extends Component {
     })
     return(
       <div>
-        <h3>Reviews:</h3>
+        <h3 className="review-main-title">Reviews for {this.props.beerName}:</h3>
         {reviews}
-        <Link to={`/beers/${this.props.beerId}/reviews/new`}>New Review</Link>
+        <Link to={`/beers/${this.props.beerId}/reviews/new`}>Add Review</Link>
       </div>
     )
   }

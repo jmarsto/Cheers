@@ -1,0 +1,26 @@
+.add-title {
+  margin-top: 5rem;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 800;
+  text-shadow:
+    1px 1px #000000,
+    1px -1px #000000,
+    -1px 1px #000000,
+    -1px -1px #000000;
+}
+
+.add-beer-form {
+  margin-right: 10rem;
+  margin-left: 10rem;
+}
+
+.add-beer-form label {
+  color: white;
+  text-shadow:
+    1px 1px #000000,
+    1px -1px #000000,
+    -1px 1px #000000,
+    -1px -1px #000000;
+  font-size: 2rem;
+}
