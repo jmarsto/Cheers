@@ -39,24 +39,22 @@ class BeersContainer extends Component {
         'Content-Type': 'application/json' },
       credentials: 'same-origin'
     })
-    .then(response => {
-      if (response.ok) {
-        return response.json()
+    .then(response => response.json())
+    .then(body => {
+      if(body.error) {
+        throw body.error
       } else {
-        throw response.json()
+        let newBeers = this.state.beerList.filter(beer => {
+          return(
+            beer.id !== body.beer_id
+          )
+        })
+        this.setState({beerList: newBeers})
       }
     })
-    .then(body => {
-      let newBeers = this.state.beerList.filter(beer => {
-        return(
-          beer.id !== body.beer_id
-        )
-      })
-      this.setState({beerList: newBeers})
-    })
-    .catch(body => {
-      this.setState({error: body.error})
-      console.log(body.error);
+    .catch(error => {
+      this.setState({error: error})
+      console.log(error);
       console.log("ERROR in FETCH")
     })
   }
@@ -81,6 +79,7 @@ class BeersContainer extends Component {
     return(
       <div>
         <h1>here are a bunch of beers</h1>
+        {this.state.error}
         <div className="beerTiles">
           {beerTiles}
           <Link to={`/beer/new`}>New Beer</Link>
