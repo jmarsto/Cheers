@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import BeerTile from '../components/BeerTile'
-<<<<<<< HEAD
 import NewBeerForm from '../components/NewBeerForm'
 import { Link } from 'react-router'
 
-=======
->>>>>>> master
 class BeersContainer extends Component {
   constructor(props) {
     super(props);
