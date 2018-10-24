@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import BeerTile from '../components/BeerTile'
-import NewBeerForm from '../components/NewBeerForm'
-import { Link } from 'react-router'
-
-
 class BeersContainer extends Component {
   constructor(props) {
     super(props);
@@ -42,10 +38,11 @@ class BeersContainer extends Component {
     })
     return(
       <div>
-        <h1>here are a bunch of beers</h1>
-        <div className="beerTiles">
+        <h1 className="cheers">CHEERS</h1>
+        <h2 className="classy">A classy beer review Website</h2>
+        <h3 className="review-title">Click a Beer</h3>
+        <div className="beer-tiles">
           {beerTiles}
-          <Link to={`/beer/new`}>New Beer</Link>
         </div>
       </div>
     )
