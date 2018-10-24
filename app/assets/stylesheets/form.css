@@ -1,0 +1,47 @@
+
+.review-form{
+  margin-top: 20rem;
+  font-style: italic;
+  color: red;
+  font-size: 1rem;
+}
+
+.submit-button{
+  color: black;
+}
+
+.forgot-pass-form{
+  margin-top: 3rem;
+  margin-left: 2rem;
+  font-style: italic;
+  color: #ffffff;
+  font-size: 4rem;
+}
+.field {
+  color: white;
+  font-weight: 800;
+}
+.sign_up {
+  margin-top: 3rem;
+  margin-left: 2rem;
+  font-style: italic;
+  color: #ffffff;
+  font-size: 4rem;
+}
+.log_in {
+  margin-top: 10rem;
+  color: #ffffff;
+  display: grid;
+}
+#actions {
+   color: black;
+ }
+.form, input, label {
+  color: black;
+  font-weight: 800;
+  font-size: 1rem;
+}
+.field_div {
+  margin-top: 14rem;
+  color: #ffffff;
+}
