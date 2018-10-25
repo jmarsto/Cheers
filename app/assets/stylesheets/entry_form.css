@@ -9,6 +9,7 @@
   color: #ffffff;
   font-size: 4rem;
 }
+
 .field {
   color: white;
   font-weight: 800;
@@ -45,7 +46,8 @@
 }
 #actions {
    color: black;
- }
+}
+
 .form, input, label {
   color: black;
   font-weight: 800;
