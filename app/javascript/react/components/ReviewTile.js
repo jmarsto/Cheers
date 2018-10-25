@@ -32,7 +32,7 @@ class ReviewTile extends Component {
 
     let img;
 
-    if(this.props.profilePhoto) {
+    if(this.props.profilePhoto.url) {
       img = <img alt="Icon" src={this.props.profilePhoto.url} width="50" height="50"/>
     }
 
