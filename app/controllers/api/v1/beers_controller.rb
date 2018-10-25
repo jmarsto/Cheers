@@ -1,6 +1,5 @@
 class Api::V1::BeersController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
-  before_action :authorize_user, except: [:index, :create, :show]
 
   def index
     render json: Beer.all
