@@ -10,6 +10,15 @@ a:visited{
   text-shadow: 2px 2px #000000
 }
 
+.review-title{
+  font-size: 4rem;
+  font-family: 'Fascinate Inline', cursive;
+  color: #000000;
+  margin-left: 33rem;
+  margin-top: 5rem;
+  text-shadow: 2px 2px #000000;
+}
+
 .top-bar {
   background-image: url('');
 }
@@ -18,28 +27,51 @@ a:visited{
   font-size: 8rem;
   font-family: 'Fascinate Inline', cursive;
   color: #A85826;
-  margin-left: 50rem;
+  text-align: right;
+  margin-right: 2rem;
 }
 
 .classy{
   font-size: 3rem;
   font-family: 'Fascinate Inline', cursive;
   color: #A85826;
-  margin-left: 40rem;
+  text-align: right;
+  margin-right: 2rem;
   text-shadow: 2px 2px #000000;
 }
 
 .beer-tiles {
   -webkit-column-rule-width: 2px;
   margin-top: 1rem;
-  color: white
+  color: black;
+  display: flex;
+  flex-flow: row wrap
 }
 
 .beer-tile {
-  border: 1px solid white;
+  padding: 0;
   color: white;
+  /* text-shadow: 2px 2px #000000; */
+  margin-bottom: 4rem;
+}
+
+.tile-contents {
+  margin: 5px;
+  border: 1px solid white;
   border-radius: 2rem;
-  margin: 1rem;
   padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: #352B1D;
+  opacity: 0.6;
+}
+
+.add-a-beer {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.beer-tile-name{
+  color: white;
+  font-size: 2rem;
   text-shadow: 2px 2px #000000
 }

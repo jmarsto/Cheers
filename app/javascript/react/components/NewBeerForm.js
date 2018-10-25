@@ -71,9 +71,9 @@ class NewBeerForm extends Component {
     return(
       <div>
         {errors}
-        <h1> Post A New Beer! </h1>
+        <h1 className="add-title"> Add A New Beer To Be Reviewed! </h1>
 
-        <form className="form" onChange={this.handleFormChange} onSubmit={this.handleSubmit}>
+        <form className="add-beer-form" onChange={this.handleFormChange} onSubmit={this.handleSubmit}>
 
           <label htmlFor="name">Name:</label>
           <input type="text" name="name" value={this.state.name}></input>

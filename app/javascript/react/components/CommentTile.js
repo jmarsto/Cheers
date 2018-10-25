@@ -3,10 +3,8 @@ import React from 'react';
 const CommentTile = props => {
   return(
     <div>
-      <div className="comment">
-        <p>User: {props.userName}
-          <br></br>
-          {props.body}
+      <div className="comment-tile">
+        <p>{props.userName}: "{props.body}"
           <br></br>
           {props.createdAt}
         </p>

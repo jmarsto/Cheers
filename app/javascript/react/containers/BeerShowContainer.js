@@ -39,15 +39,18 @@ class BeerShowContainer extends Component {
   render() {
     return(
       <div>
-        <h1>{this.state.name}</h1>
-        <div>
+        <div className="large-6 medium-6 small-6 column beer-specifics">
+          <h1>{this.state.name}</h1>
           <p>{this.state.style}</p>
           <p>ABV: {this.state.ABV}%</p>
           <p>{this.state.description}</p>
         </div>
-        <ReviewContainer
-          beerId = {this.props.params.id}
-         />
+        <div className="large-6 medium-6 small-6 column review-container">
+          <ReviewContainer
+            beerName = {this.state.name}
+            beerId = {this.props.params.id}
+           />
+        </div>
       </div>
     )
   }

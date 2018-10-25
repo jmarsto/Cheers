@@ -147,6 +147,7 @@ describe('BeerShowContainer', () => {
     it('should render the review container component with correct props', (done) => {
       setTimeout(() => {
         expect(wrapper.find(ReviewContainer).props()).toEqual({
+          beerName: beerData.beer.name,
           beerId: beerData.beer.id
         })
         done()

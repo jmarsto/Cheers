@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import BeerTile from '../components/BeerTile'
-import NewBeerForm from '../components/NewBeerForm'
 import { Link } from 'react-router'
+import NewBeerForm from '../components/NewBeerForm'
+import BeerTile from '../components/BeerTile'
 
 class BeersContainer extends Component {
   constructor(props) {
@@ -80,10 +80,13 @@ class BeersContainer extends Component {
       <div>
         {this.state.error}
         <h1 className="cheers">CHEERS</h1>
-        <h2 className="classy">A classy beer review Website</h2>
-        <h3 className="review-title">Click a Beer</h3>
+        <h2 className="classy">A Boston Local Brew Review Site</h2>
+        <h3 className="review-title"></h3>
         <div className="beer-tiles">
           {beerTiles}
+        </div>
+        <div className="add-a-beer">
+          <Link to={`/beer/new`}>Click Here To Add A New Beer</Link>
         </div>
       </div>
     )

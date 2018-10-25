@@ -1,4 +1,7 @@
-<h2 class="sign-up">Sign up</h2>
+<h1 class="cheers">CHEERS</h1>
+<h2 class="classy">A Boston Local Brew Review Site</h2>
+
+<h2 class="sign_up">Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -41,7 +44,7 @@
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %>
+        <%= f.label :password_confirmation, "Password Confirmation"%>
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
 
