@@ -1,0 +1,45 @@
+a:link{
+  color: white;
+  font-weight: 600;
+  text-shadow: 2px 2px #000000
+}
+
+a:visited{
+  color: white;
+  font-weight: 600;
+  text-shadow: 2px 2px #000000
+}
+
+.top-bar {
+  background-image: url('');
+}
+
+.cheers{
+  font-size: 8rem;
+  font-family: 'Fascinate Inline', cursive;
+  color: #A85826;
+  margin-left: 50rem;
+}
+
+.classy{
+  font-size: 3rem;
+  font-family: 'Fascinate Inline', cursive;
+  color: #A85826;
+  margin-left: 40rem;
+  text-shadow: 2px 2px #000000;
+}
+
+.beer-tiles {
+  -webkit-column-rule-width: 2px;
+  margin-top: 1rem;
+  color: white
+}
+
+.beer-tile {
+  border: 1px solid white;
+  color: white;
+  border-radius: 2rem;
+  margin: 1rem;
+  padding-left: 2rem;
+  text-shadow: 2px 2px #000000
+}
