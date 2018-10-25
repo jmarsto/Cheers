@@ -48,7 +48,9 @@ class ReviewContainer extends Component {
       <div>
         <h3 className="review-main-title">Reviews for {this.props.beerName}:</h3>
         {reviews}
-        <Link to={`/beers/${this.props.beerId}/reviews/new`}>Add Review</Link>
+        <div className="add-review-link">
+          <Link to={`/beers/${this.props.beerId}/reviews/new`}>Add Review</Link>
+        </div>
       </div>
     )
   }

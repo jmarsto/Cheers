@@ -75,17 +75,19 @@ class ReviewForm extends Component {
 
     return(
       <div>
-      <h1> Add A Review </h1>
-      <div className= "review-form">
-        {errors}
-        <form className="formlabels" onChange={this.handleFormChange} onSubmit={this.handleSubmit}>
-          <label htmlFor="body">Body:</label>
-          <input type="text" name="body" value={this.state.body}></input>
-          <label htmlFor="rating">Answer:</label>
-          <input type="number" name="rating" value={this.state.rating}></input>
-          <input className="submit-button" type="submit" value="Submit" />
-        </form>
-      </div>
+        <h1 className="cheers">CHEERS</h1>
+        <h2 className="classy">A Boston Local Brew Review Site</h2>
+        <h1 className="add-a-review"> Add A Review </h1>
+        <div className= "review-form">
+          {errors}
+          <form className="formlabels" onChange={this.handleFormChange} onSubmit={this.handleSubmit}>
+            <label htmlFor="body">Review:</label>
+            <input type="text" name="body" value={this.state.body}></input>
+            <label htmlFor="rating">Rating (out of 100):</label>
+            <input type="number" name="rating" value={this.state.rating}></input>
+            <input className="submit-button" type="submit" value="Submit" />
+          </form>
+        </div>
       </div>
     )
   }
