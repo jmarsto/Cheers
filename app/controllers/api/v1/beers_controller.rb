@@ -34,10 +34,4 @@ class Api::V1::BeersController < ApplicationController
     def beer_params
       params.require(:beer).permit(:name, :style, :description, :ABV)
     end
-
-    def authorize_user
-    if !user_signed_in? && current_user.admin?
-    end
-  end
-
 end
