@@ -79,11 +79,13 @@ class ReviewForm extends Component {
         <h2 className="classy">A Boston Local Brew Review Site</h2>
         <h1 className="add-a-review"> Add A Review </h1>
         <div className= "review-form">
+          <div className = "flash">
           {errors}
+          </div>
           <form className="formlabels" onChange={this.handleFormChange} onSubmit={this.handleSubmit}>
             <label htmlFor="body">Review:</label>
             <input type="text" name="body" value={this.state.body}></input>
-            <label htmlFor="rating">Rating (out of 100):</label>
+            <label htmlFor="rating">Rating (out of 5):</label>
             <input type="number" name="rating" value={this.state.rating}></input>
             <input className="submit-button" type="submit" value="Submit" />
           </form>
