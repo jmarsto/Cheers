@@ -6,7 +6,7 @@ const CommentTile = props => {
       <div className="comment-tile">
         <p>{props.userName}: "{props.body}"
           <br></br>
-          {props.createdAt}
+          {`${props.createdAt}`}
         </p>
       </div>
     </div>

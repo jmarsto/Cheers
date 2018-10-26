@@ -29,6 +29,7 @@ class ReviewContainer extends Component {
 
   render() {
     let reviews = this.state.reviews.map(review => {
+      let date = new Date(review.created_at).toLocaleString();
       return (
         <ReviewTile
           key = {review.id}
@@ -37,7 +38,7 @@ class ReviewContainer extends Component {
           username = {review.username}
           body = {review.body}
           rating = {review.rating}
-          createdAt = {review.created_at}
+          createdAt = {date}
           user = {review.user}
           comments = {review.comments}
           beerId = {this.props.beerId}
