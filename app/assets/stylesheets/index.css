@@ -75,3 +75,20 @@ a:visited{
   font-size: 2rem;
   text-shadow: 2px 2px #000000
 }
+
+.delete-button {
+  float: right;
+  margin-top: 5px;
+  height: 10px;
+  width: 2px;
+  color: black;
+  background-color: inherit;
+}
+.delete-button:hover{
+  background-color: inherit;
+
+}
+.delete-x {
+  margin-bottom: 10px;
+  
+}
