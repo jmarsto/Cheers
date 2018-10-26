@@ -18,7 +18,7 @@ User.create([
   { user_name: "Davismeme", first_name: "Davis", last_name: "Ma", email: "davishma@gmail.com", encrypted_password: "light1", password: "light1" , age: 32, profile_photo: nil, role: "true"},
   { user_name: "RockyRoll", first_name: "Rocky", last_name: "Roll", email: "Rocky@gmail.com", encrypted_password: "rockyroll", password: "rockyroll" , age: 40, profile_photo: nil, role: "false"},
   { user_name: "AlanDust", first_name: "Alan", last_name: "Dust", email: "Alandust@gmail.com", encrypted_password: "alandust", password: "alandust" , age: 36, profile_photo: nil, role: "false"},
-  { user_name: "JackMarston", first_name: "Jack", last_name: "Marston", email: "JackMarston@gmail.com", encrypted_password: "Jackjack", password: "jackjack" , age: 28, profile_photo: nil, role: "false" }
+  { user_name: "JackMarston", first_name: "Jack", last_name: "Marston", email: "JackMarston@gmail.com", encrypted_password: "jackjack", password: "jackjack" , age: 28, profile_photo: nil, role: "false" }
   ])
 
 Review.create([
