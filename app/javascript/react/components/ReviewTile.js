@@ -18,13 +18,14 @@ class ReviewTile extends Component {
 
   render() {
     let comments = this.state.comments.map(comment => {
+      let date = new Date(comment.created_at).toLocaleString();
       return(
         <CommentTile
           key = {comment.id}
           id = {comment.id}
           body = {comment.body}
           userName = {comment.username}
-          createdAt = {comment.created_at}
+          createdAt = {date}
           updatedAt = {comment.updated_at}
           />
       )
@@ -44,7 +45,7 @@ class ReviewTile extends Component {
             <h4 className="reviewer-name">{this.props.username}</h4>
             <p className="review-rating">Review: {this.props.body}</p>
             <p className="review-rating">Rating: {this.props.rating}</p>
-            <p>{this.props.createdAt}</p>
+            <p>{`${this.props.createdAt}`}</p>
           </div>
           <div className="comments-container">
             {comments}
