@@ -86,9 +86,10 @@ a:visited{
 }
 .delete-button:hover{
   background-color: inherit;
-
 }
 .delete-x {
   margin-bottom: 10px;
-  
+}
+.flash{
+  color: white;
 }

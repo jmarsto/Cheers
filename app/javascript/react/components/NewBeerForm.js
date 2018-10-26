@@ -70,7 +70,9 @@ class NewBeerForm extends Component {
 
     return(
       <div>
-        {errors}
+        <div className = "flash">
+          {errors}
+        </div>
         <h1 className="add-title"> Add A New Beer To Be Reviewed! </h1>
 
         <form className="add-beer-form" onChange={this.handleFormChange} onSubmit={this.handleSubmit}>
